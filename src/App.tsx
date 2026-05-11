@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -36,6 +37,7 @@ const legacyNoAccountRoutes = [
 
 const App = () => (
   <BrowserRouter future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
+    <Analytics />
     <ScrollRestoration />
     <Routes>
       <Route path="/" element={<Index />} />
